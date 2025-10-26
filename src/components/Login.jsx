@@ -71,8 +71,8 @@ const Login = ({ onLoginSuccess }) => {
         device: 'web'
       };
 
-      console.log('🔄 Attempting login in mode:', apiMode);
-      console.log('📦 Login data:', loginData);
+      console.log(' Attempting login in mode:', apiMode);
+      console.log(' Login data:', loginData);
 
       const response = await studentLogin(loginData);
       
@@ -80,14 +80,14 @@ const Login = ({ onLoginSuccess }) => {
       setApiModeState(getApiMode());
       
       if (response && response.token) {
-        console.log('✅ Login successful, token received');
+        console.log('Login successful, token received');
         setToken(response.token);
         onLoginSuccess();
       } else {
         setError('Login failed: No token received');
       }
     } catch (err) {
-      console.error('❌ Login error:', err);
+      console.error(' Login error:', err);
       setApiModeState(getApiMode());
       
       if (apiMode === 'mock') {
@@ -262,7 +262,7 @@ const Login = ({ onLoginSuccess }) => {
             </p>
             {apiMode === 'mock' && (
               <p className="text-sm text-green-700 mt-2">
-                ✅ <strong>Demo Mode Active:</strong> These credentials will work
+                 <strong>Demo Mode Active:</strong> These credentials will work
               </p>
             )}
           </div>
@@ -300,11 +300,6 @@ const Login = ({ onLoginSuccess }) => {
         </form>
 
         {/* Debug Info */}
-        <div className="text-center text-xs text-gray-500 space-y-2">
-          <p>🔍 Current mode: <strong>{apiMode === 'real' ? 'REAL API' : 'DEMO'}</strong></p>
-          <p>📝 In demo mode, use: <strong>minhaj</strong> / <strong>12345</strong></p>
-          <p>🔄 Real API credentials may not work - use demo mode for testing</p>
-        </div>
       </div>
     </div>
   );

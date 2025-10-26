@@ -50,11 +50,11 @@ export const mockStudentLogin = async (loginData) => {
         username: 'minhaj'
       }
     };
-    console.log('✅ Mock login successful:', mockResponse);
+    console.log('Mock login successful:', mockResponse);
     return mockResponse;
   } else {
     const error = new Error('Invalid credentials - Use username: minhaj, password: 12345');
-    console.log('❌ Mock login failed:', error.message);
+    console.log('Mock login failed:', error.message);
     throw error;
   }
 };
